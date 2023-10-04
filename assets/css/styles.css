@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.remaining-container {
+    border: solid black 1px;
+    padding: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(var(--numCols, 20), 20px);
+    grid-template-rows: repeat(var(--numRows, 20), 20px);
+    gap: 3px;
+    user-select: none;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+}
+
+.square:not(.revealed):hover {
+    outline: solid black 1px;
+    color: grey;
+    cursor: pointer;
+}
+
+.square.revealed {
+    background-color: lightgrey;
+}
+
+.square>span {
+    display: none;
+    pointer-events: none;
+}
+
+.square.revealed>span {
+    display: inline;
+}
+
+.reset-button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    opacity: .8;
+}
