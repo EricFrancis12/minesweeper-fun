@@ -78,8 +78,20 @@ function addBombs(firstClickedSquare) {
                 }
             }
 
+            let color = '';
+            switch (squareNumber) {
+                case 1: color = 'blue'; break;
+                case 2: color = 'green'; break;
+                case 3: color = 'red'; break;
+                case 4: color = 'darkblue'; break;
+                case 5: color = 'brown'; break;
+                case 6: color = 'cyan'; break;
+                case 7: color = 'black'; break;
+                case 8: color = 'grey'; break;
+            }
+
             square.dataset.number = squareNumber;
-            square.innerHTML = squareNumber !== 0 ? `<span>${squareNumber}</span>` : '';
+            square.innerHTML = squareNumber !== 0 ? `<span style="color:${color}">${squareNumber}</span>` : '';
         });
     }
 }
@@ -178,7 +190,7 @@ function checkIfWin() {
 function gameOver(square) {
     square.classList.add('revealed');
     gameOver.status = true;
-    
+
     setTimeout(() => {
         alert('Game Over!');
 
